@@ -1,3 +1,4 @@
+import { SplashScreen } from '@capacitor/splash-screen';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -10,6 +11,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+SplashScreen.hide()
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
