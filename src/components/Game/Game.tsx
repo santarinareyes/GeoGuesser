@@ -2,7 +2,7 @@
 import { ReactElement, useEffect, useState } from "react";
 import { GOOGLE_MAP_URL } from "../../utils/mapSettings";
 import { LOCATIONS_DATA } from "../../utils/locations.data";
-import MapContainer from "../MapContainer/MapContainer";
+import MapContainer from "../Map/Map";
 import { IonButton, IonCol, IonRow } from "@ionic/react";
 import { LocationData } from "../../utils/types";
 import "./Game.css"
