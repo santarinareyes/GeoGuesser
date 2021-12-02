@@ -7,7 +7,7 @@ import {
   IonToolbar
 } from '@ionic/react';
 import { useState } from 'react';
-import Map from '../../components/Map/Map';
+import Game from '../../components/Game/Game';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         {gameStarted ?
-          <Map /> :
+          <Game /> :
           <IonContent className="ion-padding">
             <h2 className="ion-text-capitalize">Game rules:</h2>
             <p>You get a point if your guess is at least 50 KM away from the target.</p>
