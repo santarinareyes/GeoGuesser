@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ReactElement, useEffect, useState } from "react";
 import { GOOGLE_MAP_URL } from "./mapSettings";
 import { LOCATIONS_DATA } from "../../utils/locations.data";
-import MapContainer from "./MapContainer";
+import MapContainer from "./MapContainer/MapContainer";
 import { IonButton, IonCol, IonRow } from "@ionic/react";
 import { LocationData } from "../../utils/types";
 import "./Map.css"
@@ -65,24 +66,26 @@ const Map = (): ReactElement => {
             />
             <IonRow className="ion-justify-content-between">
                 <div>Find: {location?.name}</div>
-                <div>Highscore: {highscore}</div>
+                <div>Points: {points}</div>
             </IonRow>
             <IonRow className="ion-justify-content-between">
-                <div>Points: {points}</div>
+                <div>Highscore: {highscore}</div>
                 <div>Available distance: {distanceBank}</div>
             </IonRow>
-            <div className="ion-margin-top ion-text-center ion-align-self-baseline">
+            <div className="ion-text-center ion-align-self-baseline">
                 {mapClicked && !gameOver && (
                     <IonCol>
                         <IonButton className="bottom" expand="full" onClick={randomLocation}>New Location</IonButton>
                     </IonCol>
                 )}
-                {mapClicked && <h4>{distance}KM away from the target</h4>}
+                {mapClicked && <span>{distance}KM away from the target</span>}
                 {gameOver && (
-                    <IonCol>
-                        <h3>Game Over</h3>
-                        <IonButton className="bottom" expand="full" onClick={tryAgain}>Try again</IonButton>
-                    </IonCol>
+                    <>
+                        <p>Game Over</p>
+                        <IonCol>
+                            <IonButton className="bottom" expand="full" onClick={tryAgain}>Try again</IonButton>
+                        </IonCol>
+                    </>
                 )}
             </div>
         </IonCol>
